@@ -1,0 +1,182 @@
+<html>
+
+<head>
+    <title>Search Weather by City Name</title>
+    <link rel="icon" href="Icons/Pngtree-blue thunderstorm weather symbol_3270883.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5282137009665311"
+     crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
+
+    <script>
+
+$(document).ready(function(){
+   $(".active").removeClass("active");
+   $("#search-city").addClass("active");
+});
+
+    </script>
+
+</head>
+
+
+<body>
+    <section id="nav">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="Icons/Pngtree-blue thunderstorm weather symbol_3270883.png" height="50"><span class="logo-font">SKYDITY</span><small style="color: white;">.com</small></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav ml-auto">
+                        <a class="nav-item nav-link active" href="index.html">Home <span
+                                class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="hourlyForecast.html">Hourly Forecast</a>
+                        <a class="nav-item nav-link" href="7dayForecast.html">7 Day Forecast</a>
+                        <a class="nav-item nav-link" href="testfile.html" id="search-city">Search by City</a>
+                        <a class="nav-item nav-link" href="astronomyCalendar.html">Astronomy Calendar</a>
+                        <a class="nav-item nav-link" href="AboutUs.html">About Us</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+
+    <div class="container mt-3">
+
+        <form id="form-submit">
+            <div class="form-group">
+                <label>Enter your City: </label>
+                <input type="text" class="form-control" id="city" placeholder="ex. London...">
+                <small class="form-text">Please enter the city name for weather info.</small>
+                <button type="submit" class="btn btn-primary mt-3" id="send">Search</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+  
+    
+
+
+<div class="d-flex container m-8 adjust-margin adjust-columns">
+    <div class="container mx-auto p-3 border pt-3">
+        <div class="row text-center justify-content-center">
+            <div class="col text-center">
+                
+                <div class="location">
+                    <h1 class="location-timezone">Timezone</h1>
+        
+                    <p class="current-Icon">Icon</p>
+                    
+                </div>
+                <div class="temperature">
+                    <div class="degree-section">
+                        <h2 class="temperature-degree">34</h2><span>°C</span>
+                    </div>
+                    <div class="temperature-description">Its freaking cold</div>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto p-3 border">
+        <div class="row">
+            <div class="col">
+                <div class="row p-3">
+                    <div class="col degree-section">
+                        <img src="Icons/pngwing.com.png" width="30" height="30"><div class="w-captions">Feels Like</div>
+                    <div id="feels-like"></div><strong>°C</strong>    
+                    </div>
+                    <div class="col degree-section">
+                        <img src="Icons/Pngtree-visible social media icon 3d_5860451.png" width="30" height="30"><div class="w-captions">Visibility</div>
+                    <div id="visibility"></div><strong>Km</strong>    
+                    </div>
+                </div>
+                <div class="row p-3">
+                    
+                    <div class="col degree-section">
+                        <img src="Icons/2682807_drop_high_humidity_percentage_precipitation_icon.png" width="30" height="30"><div class="w-captions">Humidity</div>
+                        <div id="humidity"></div><strong>%</strong>
+                </div>
+                    <div class="col degree-section">
+                        <img src="Icons/2682842_breeze_fast_speed_weather_wind_icon.png" width="30" height="30"><div class="w-captions">Wind Speed</div>
+                        <div  id="wind-speed"></div><strong>m/s</strong>
+                        </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col degree-section">
+                        <img src="Icons/3859155_climate_forecast_minus_temperature_weather_icon.png" width="30" height="30"><div class="w-captions">Min. Temp</div>
+                        <div id="min-temp"></div><strong>°C</strong>
+                    </div>
+                    <div class="col degree-section">
+                        <img src="Icons/3859153_climate_forecast_plus_temperature_weather_icon.png" width="30" height="30"><div class="w-captions">Max. Temp</div>
+                        <div id="max-temp"></div><strong>°C</strong>
+                    </div>
+                </div>
+                <div class="row p-3">
+                    <div class="col degree-section">
+                        <img src="Icons/pngwing.com (1).png" width="30" height="30"><div class="w-captions">Pressure</div>
+                        <div id="pressure"></div><strong>Pa</strong>
+                    </div>
+                    <div class="col degree-section">
+                        <img src="Icons/Pngtree-3d weather cloud with cloudy_6508396.png" width="30" height="30"><div class="w-captions">Cloudy</div>
+                        <div id="cloud-iness"></div><strong>%</strong>
+                    </div>
+                </div>
+               
+
+                
+               
+
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer-copyright text-center py-3" style="color: white;">© 2021 Copyright reserved
+      <!-- <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>-->
+     </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/61b8d28ac82c976b71c169b8/1fmsvcrvi';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+</body>
+
+</html>
